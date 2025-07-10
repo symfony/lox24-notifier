@@ -328,7 +328,7 @@ class Lox24TransportTest extends TransportTestCase
     private function assertHeaders(array $expected, array $headers): void
     {
         foreach ($this->normalizeHeaders($expected) as $expectedHeader) {
-            $headerExists = in_array($expectedHeader, $headers, true);
+            $headerExists = \in_array($expectedHeader, $headers, true);
             $this->assertTrue($headerExists, "Header '$expectedHeader' not found in request's headers");
         }
     }
