@@ -23,7 +23,7 @@ use Symfony\Component\Webhook\Exception\RejectWebhookException;
  *
  * @see https://doc.lox24.eu/#section/Introduction/Notifications
  */
-final class LOX24RequestParser extends AbstractRequestParser
+final class Lox24RequestParser extends AbstractRequestParser
 {
     protected function getRequestMatcher(): RequestMatcherInterface
     {
