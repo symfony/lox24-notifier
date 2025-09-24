@@ -78,7 +78,7 @@ class Lox24TransportTest extends TransportTestCase
         $this->assertFalse($transport->supports($message));
     }
 
-    public function testSupportWithNotLOX24Options()
+    public function testSupportWithNotLox24Options()
     {
         $transport = new Lox24Transport('user', 'token', 'testFrom');
         $message = new SmsMessage('test', 'test');
