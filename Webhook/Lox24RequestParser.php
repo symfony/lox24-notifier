@@ -67,7 +67,7 @@ final class Lox24RequestParser extends AbstractRequestParser
     {
         return match ($eventName) {
             'sms.delivery', 'sms.delivery.dryrun' => $this->createDeliveryEvent($data, $payload),
-            default => $this->createRemoteEvent($eventName, $payload),
+            default => new RemoteEvent($eventName, $payload['id'], $payload),
         };
     }
 
@@ -119,10 +119,5 @@ final class Lox24RequestParser extends AbstractRequestParser
         };
 
         return new SmsEvent($eventType, $data['id'], $payload);
-    }
-
-    private function createRemoteEvent(string $eventName, array $payload): RemoteEvent
-    {
-        return new RemoteEvent($eventName, $payload['id'], $payload);
     }
 }
